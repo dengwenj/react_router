@@ -36,11 +36,30 @@ export default class Message extends Component {
           })} */}
 
           {/* search 参数，就类似 query 参数，在 Link 这里动下就行了，注册路由哪里不用动 */}
-          {arr.map((item) => {
+          {/* {arr.map((item) => {
             return (
               <Link
                 key={item.id}
                 to={`/home/message/detail?name=${item.name}&age=${item.age}`}
+              >
+                <br />
+                姓名：{item.name}-年龄：{item.age}
+              </Link>
+            )
+          })} */}
+
+          {/* state 参数，state参数的有点就是路径里面没有任何的提示是偷偷的把数据传递过去的 是一个对象*/}
+          {arr.map((item) => {
+            return (
+              <Link
+                key={item.id}
+                to={{
+                  pathname: '/home/message/detail',
+                  state: {
+                    name: item.name,
+                    age: item.age,
+                  },
+                }}
               >
                 <br />
                 姓名：{item.name}-年龄：{item.age}
@@ -52,6 +71,8 @@ export default class Message extends Component {
         {/* params 传参 */}
         {/* <Route path="/home/message/detail/:name/:age" component={Detail} /> */}
         {/* search 传参 */}
+        {/* <Route path="/home/message/detail" component={Detail} /> */}
+        {/* state 参数 */}
         <Route path="/home/message/detail" component={Detail} />
       </div>
     )

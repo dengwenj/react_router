@@ -7,14 +7,17 @@ export default class Detail extends Component {
     // const { name, age } = this.props.match.params
 
     // 通过 search 传参
-    const {
-      location: { search },
-    } = this.props
-    const arr = search.slice(1).split('&')
-    let arrValue = []
-    arr.forEach((item) => {
-      arrValue.push(item.split('=')[1])
-    })
+    // const {
+    //   location: { search },
+    // } = this.props
+    // const arr = search.slice(1).split('&')
+    // let arrValue = []
+    // arr.forEach((item) => {
+    //   arrValue.push(item.split('=')[1])
+    // })
+
+    // 通过 state 传参
+    const { name, age } = this.props.location.state
 
     return (
       <div>
@@ -24,9 +27,12 @@ export default class Detail extends Component {
         {/* <div>我是父组件通过 params参数 传递过来的：{name}</div>
         <div>我是父组件通过 params参数 传递过来的：{age}</div> */}
         {/* 通过 search 传参 */}
-        {arrValue.map((item) => {
+        {/* {arrValue.map((item) => {
           return <div key={item}>{item}</div>
-        })}
+        })} */}
+        {/* 通过 state 传参 */}
+        <div>{name}</div>
+        <div>{age}</div>
       </div>
     )
   }

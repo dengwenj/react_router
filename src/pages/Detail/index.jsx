@@ -17,7 +17,7 @@ export default class Detail extends Component {
     // })
 
     // 通过 state 传参
-    const { name, age } = this.props.location.state
+    // const { name, age } = this.props.location.state
 
     return (
       <div>
@@ -31,8 +31,8 @@ export default class Detail extends Component {
           return <div key={item}>{item}</div>
         })} */}
         {/* 通过 state 传参 */}
-        <div>{name}</div>
-        <div>{age}</div>
+        {/* <div>{name}</div>
+        <div>{age}</div> */}
       </div>
     )
   }

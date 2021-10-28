@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { Link, Route } from 'react-router-dom'
+
+import Detail from '../Detail'
 
 export default class Message extends Component {
   state = {
@@ -19,14 +22,21 @@ export default class Message extends Component {
       <div style={style}>
         我是message组件，我是home的子组件
         <ul>
+          {/* 向路由组件传递 params 参数 */}
           {arr.map((item) => {
             return (
-              <li key={item.id}>
+              <Link
+                key={item.id}
+                to={`/home/message/detail/${item.name}/${item.age}`}
+              >
+                <br />
                 姓名：{item.name}-年龄：{item.age}
-              </li>
+              </Link>
             )
           })}
         </ul>
+        {/* <Link to={`/home/message/detail/${}`}>我是detail组价</Link> */}
+        <Route path="/home/message/detail/:name/:age" component={Detail} />
       </div>
     )
   }

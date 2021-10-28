@@ -22,7 +22,7 @@ export default class Message extends Component {
       <div style={style}>
         我是message组件，我是home的子组件
         <ul>
-          {/* 向路由组件传递 params 参数 */}
+          {/* 向路由组件传递 params 参数
           {arr.map((item) => {
             return (
               <Link
@@ -33,10 +33,26 @@ export default class Message extends Component {
                 姓名：{item.name}-年龄：{item.age}
               </Link>
             )
+          })} */}
+
+          {/* search 参数，就类似 query 参数，在 Link 这里动下就行了，注册路由哪里不用动 */}
+          {arr.map((item) => {
+            return (
+              <Link
+                key={item.id}
+                to={`/home/message/detail?name=${item.name}&age=${item.age}`}
+              >
+                <br />
+                姓名：{item.name}-年龄：{item.age}
+              </Link>
+            )
           })}
         </ul>
-        {/* <Link to={`/home/message/detail/${}`}>我是detail组价</Link> */}
-        <Route path="/home/message/detail/:name/:age" component={Detail} />
+        {/* 注册路由 */}
+        {/* params 传参 */}
+        {/* <Route path="/home/message/detail/:name/:age" component={Detail} /> */}
+        {/* search 传参 */}
+        <Route path="/home/message/detail" component={Detail} />
       </div>
     )
   }

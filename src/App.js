@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Route, Switch } from 'react-router-dom'
+import { Link, Route, Switch, Redirect } from 'react-router-dom'
 
 import About from './pages/About'
 import Home from './pages/Home'
@@ -21,6 +21,11 @@ export default function App() {
         <Route exact path="/about" component={About} />
         {/* 这样的话就会一次往下找，找到了也会往下找 加了 Switch 的话找到了就不会往下找了 */}
         {/* <Route path="/home" component={About} />  */}
+
+        {/* Redirect 谁都匹配不上的时候就只听从 Redirect 的 他让你去哪就去哪 */}
+        {/* 一上来是 / 这个路径，没有匹配上，然后他就会给你跳转到 about 路径 ，就匹配上了*/}
+        {/* 从定向的意思，让你去哪就去哪 */}
+        <Redirect to="/about" />
       </Switch>
     </div>
   )

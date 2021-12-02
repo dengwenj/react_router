@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { renderRoutes, matchRoutes } from 'react-router-config'
 import routes from '../../router';
 
 // import Message from '../Message';
-import News from '../News';
+// import News from '../News';
 
 export default class Home extends Component {
     state = {

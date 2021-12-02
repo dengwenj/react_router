@@ -42,6 +42,7 @@ export default class News extends Component {
     this.props.history.replace(`/home/message/detail?name=${name}&age=${age}`)
   }
   render() {
+    console.log(this.props);// {renderRoutes(this.props.route.routes, { name: 'dwj' })}传过来的
     const { style } = this.state
     return (
       <div style={style}>

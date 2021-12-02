@@ -17,6 +17,7 @@ export default class Message extends Component {
     },
   }
   render() {
+    console.log(this.props); // {renderRoutes(this.props.route.routes, { name: 'dwj' })}传过来的
     const { arr, style } = this.state
     return (
       <div style={style}>
